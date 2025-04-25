@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-  Solid State (HTML5 UP) · simplified, banner-video, no menu
+  Solid State (HTML5 UP) · 简化版，视频 Banner + 自定义区块
 -->
 <html>
 <head>
@@ -10,47 +10,54 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- Custom tweaks: full-screen banner video + styled texts -->
+  <!-- 自定义样式 -->
   <style>
-    /* ① 让 banner 占满视口高 */
+    /* ---------- 视频 Banner ---------- */
     #banner{
-      position:relative;
-      overflow:hidden;
-      min-height:100vh;
+      position:relative; overflow:hidden; min-height:100vh;
+      display:flex; align-items:center; justify-content:center; text-align:center;
       padding:0;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
     }
-    /* ② 视频尺寸 */
     #banner video{
       position:absolute; top:0; left:0;
-      min-width:100%; min-height:100%;
-      object-fit:cover;
+      min-width:100%; min-height:100%; object-fit:cover;
     }
-    /* ③ 文字层 */
     #banner .inner{ position:relative; z-index:1; }
 
-    /* ④ 标题与副标题的统一背景样式 */
     .title-bg{
       display:inline-block;
-      background:rgba(55, 70, 100, 0.7); /* 灰蓝半透明 */
-      padding:.3em .6em;
-      border-radius:4px;
+      background:rgba(55,70,100,.7);
+      padding:.3em .6em; border-radius:4px;
     }
-    /* ⑤ 主标题 h2 保持原字号；副标题 p 放大 */
     #banner h2{ line-height:1.2; }
     #banner p.tagline{ margin-top:1rem; font-size:1.4rem; font-weight:600; }
 
-    /* ⑥ 其余内容可自行调整（示例去掉第一块后重新排序） */
+    /* ---------- 新增：随机森林图片栅格 ---------- */
+    #rfstats{
+      padding:4rem 2rem;
+      background:#f5f6f7;            /* 淡灰底，区分主体 */
+      text-align:center;
+    }
+    #rfstats h2{
+      font-size:2rem; margin-bottom:2rem;
+    }
+    .rf-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:1.5rem;
+      max-width:1200px; margin:0 auto;
+    }
+    .rf-grid img{
+      width:100%; height:auto; border-radius:6px;
+      box-shadow:0 2px 6px rgba(0,0,0,.15);
+    }
   </style>
 </head>
 
 <body class="is-preload">
   <div id="page-wrapper">
 
-    <!-- Header -->
+    <!-- 头部 Logo -->
     <header id="header">
       <h1>
         <a href="index.html">
@@ -59,7 +66,7 @@
       </h1>
     </header>
 
-    <!-- Banner with video -->
+    <!-- 视频 Banner -->
     <section id="banner">
       <video autoplay muted loop playsinline>
         <source src="assets/vedio/bg.webm" type="video/webm">
@@ -68,26 +75,35 @@
 
       <div class="inner">
         <div class="logo"><span class="icon fa-gem"></span></div>
-
-        <!-- 主标题 -->
         <h2 class="title-bg">Micro-Hub Placement for Manhattan Reverse Logistics</h2>
-
-        <!-- 副标题，已放大并同色背景 -->
         <p class="tagline title-bg">GIS simulation × Random Forest analytics</p>
       </div>
     </section>
 
-    <!-- Wrapper -->
-    <section id="wrapper">
-      <!-- 〓〓〓 原 section “one” 已被移除 〓〓〓 -->
+    <!-- ★★★ 新增：随机森林模型可视化区块 ★★★ -->
+    <section id="rfstats">
+      <h2>Random Forest Model Key Statistics &amp; Visualized Summaries</h2>
 
-      <!-- Two (现在作为第一块) -->
+      <div class="rf-grid">
+        <!-- 占位图，上传后自动替换 -->
+        <img src="images/rf1.png" alt="RF visualization 1">
+        <img src="images/rf2.png" alt="RF visualization 2">
+        <img src="images/rf3.png" alt="RF visualization 3">
+        <img src="images/rf4.png" alt="RF visualization 4">
+        <img src="images/rf5.png" alt="RF visualization 5">
+        <img src="images/rf6.png" alt="RF visualization 6">
+      </div>
+    </section>
+
+    <!-- Wrapper（保留其他内容，如需可继续编辑） -->
+    <section id="wrapper">
+      <!-- Two（示例保留） -->
       <section id="two" class="wrapper alt spotlight style2">
         <div class="inner">
           <a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
           <div class="content">
             <h2 class="major">Tempus adipiscing</h2>
-            <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna.</p>
+            <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit…</p>
             <a href="#" class="special">Learn more</a>
           </div>
         </div>
@@ -99,7 +115,7 @@
           <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
           <div class="content">
             <h2 class="major">Nullam dignissim</h2>
-            <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna.</p>
+            <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit…</p>
             <a href="#" class="special">Learn more</a>
           </div>
         </div>
@@ -109,8 +125,7 @@
       <section id="four" class="wrapper alt style1">
         <div class="inner">
           <h2 class="major">Vitae phasellus</h2>
-          <p>Cras mattis ante fermentum, malesuada neque vitae, eleifend erat. Phasellus non pulvinar erat.</p>
-          <!-- … feature articles … -->
+          <p>Cras mattis ante fermentum, malesuada neque vitae…</p>
         </div>
       </section>
     </section>
@@ -119,7 +134,7 @@
     <section id="footer">
       <div class="inner">
         <h2 class="major">Get in touch</h2>
-        <!-- contact form + links -->
+        <!-- … Contact form / links … -->
       </div>
     </section>
 
