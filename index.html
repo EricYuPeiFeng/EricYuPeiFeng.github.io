@@ -6,13 +6,33 @@
 -->
 <html>
 	<head>
-		<title>Solid State by HTML5 UP</title>
+		<title>Solid State with Video Background</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<!-- ★ 仅 6 行：全屏固定视频样式 ★ -->
+		<style>
+			#bgvid{
+				position:fixed;
+				top:0;left:0;
+				min-width:100%;
+				min-height:100%;
+				object-fit:cover;
+				z-index:-1;
+			}
+		</style>
 	</head>
+
 	<body class="is-preload">
+
+		<!-- ★ Full-screen looping video background ★ -->
+		<video autoplay muted loop playsinline id="bgvid">
+			<source src="assets/video/bg.webm" type="video/webm">
+			<source src="assets/video/bg.mp4"  type="video/mp4">
+		</video>
+		<!-- ★ End video background ★ -->
 
 		<!-- Page Wrapper -->
 			<div id="page-wrapper">
