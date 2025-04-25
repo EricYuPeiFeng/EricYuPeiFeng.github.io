@@ -23,7 +23,7 @@
     #banner h2{line-height:1.2}
     #banner p.tagline{margin-top:1rem;font-size:1.4rem;font-weight:600}
 
-    /* ---------- 随机森林区块：深紫蓝 ---------- */
+    /* ---------- 随机森林区块 ---------- */
     #rfstats{padding:4rem 2rem;background:#3D2E86;text-align:center}
     #rfstats h2{font-size:2rem;margin-bottom:2rem}
     .rf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto}
@@ -38,9 +38,17 @@
     .edu-list li{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.8rem}
     .edu-list img{width:80px;height:auto}
     .edu-list li:first-child span{white-space:nowrap}
+
     .contact-section{flex:1 1 320px}
     .contact-list{list-style:none;padding:0;margin:0}
     .contact-list li{margin-bottom:0.6rem}
+
+    /* ★ 新增：联系方式行内不换行 ★ */
+    .contact-section .contact-list li{
+      white-space: nowrap;
+      overflow-wrap: normal;
+    }
+
     a.contact-link{color:#9ad7ff;text-decoration:none}
     a.contact-link:hover{text-decoration:underline}
   </style>
