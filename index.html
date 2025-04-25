@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-  Simplified Solid State (HTML5 UP)   ·  Banner-video version
+  Solid State (HTML5 UP) · simplified, banner-video, no menu
 -->
 <html>
 <head>
@@ -10,20 +10,43 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- Video banner styles -->
+  <!-- Custom tweaks: full-screen banner video + title background -->
   <style>
-    #banner { position:relative; overflow:hidden; }
-    #banner video{ position:absolute; top:0;left:0;
-      min-width:100%; min-height:100%; object-fit:cover;
+    /* ① 让 banner 占满整个视口高 */
+    #banner{
+      position:relative;
+      overflow:hidden;
+      min-height:100vh;      /* 满屏高 */
+      padding:0;             /* 去掉原先内边距 */
+      display:flex;          /* 居中内容 */
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+    }
+    /* ② 覆盖视频尺寸 */
+    #banner video{
+      position:absolute; top:0; left:0;
+      min-width:100%; min-height:100%;
+      object-fit:cover;
+    }
+    /* ③ 文本层在视频之上 */
+    #banner .inner{ position:relative; z-index:1; }
+
+    /* ④ 给大标题加灰蓝背景 */
+    #banner h2{
+      display:inline-block;
+      background:rgba(55, 70, 100, 0.7); /* 灰蓝 + 半透明 */
+      padding:.3em .6em;
+      border-radius:4px;
+      line-height:1.2;
     }
   </style>
 </head>
 
 <body class="is-preload">
-  <!-- Page Wrapper -->
   <div id="page-wrapper">
 
-    <!-- Header (logo only, menu removed) -->
+    <!-- Header (logo only) -->
     <header id="header">
       <h1>
         <a href="index.html">
@@ -32,15 +55,15 @@
       </h1>
     </header>
 
-    <!-- Banner with video background -->
+    <!-- Banner with video -->
     <section id="banner">
-      <!-- ★ video lives here ★ -->
+      <!-- ★ Video background ★ -->
       <video autoplay muted loop playsinline>
         <source src="assets/vedio/bg.webm" type="video/webm">
         <source src="assets/vedio/bg.mp4"  type="video/mp4">
       </video>
 
-      <!-- banner text -->
+      <!-- Text overlay -->
       <div class="inner">
         <div class="logo"><span class="icon fa-gem"></span></div>
         <h2>Micro-Hub Placement for Manhattan Reverse Logistics</h2>
@@ -48,9 +71,20 @@
       </div>
     </section>
 
-    <!-- Wrapper -->
+    <!-- Wrapper (其余内容保持不变，可自行删改) -->
     <section id="wrapper">
-      <!-- … original “one/two/three/four” content unchanged … -->
+      <!-- One -->
+      <section id="one" class="wrapper spotlight style1">
+        <div class="inner">
+          <a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+          <div class="content">
+            <h2 class="major">Magna arcu feugiat</h2>
+            <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit…</p>
+            <a href="#" class="special">Learn more</a>
+          </div>
+        </div>
+      </section>
+      <!-- Two / Three / Four … 原模板内容照常 -->
     </section>
 
     <!-- Footer -->
