@@ -31,14 +31,22 @@
 
     /* ---------- 随机森林可视化区块 ---------- */
     #rfstats{
-      padding:4rem 2rem; background:#f5f6f7; text-align:center;
+      padding:4rem 2rem;
+      background:#F0EDFF;     /* ❶ 浅紫色背景 */
+      text-align:center;
     }
     #rfstats h2{ font-size:2rem; margin-bottom:2rem; }
+
     .rf-grid{
       display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns:repeat(3, 1fr); /* ❷ 每行固定 3 张 */
       gap:1.5rem; max-width:1200px; margin:0 auto;
     }
+    /* 窄屏自适应列数 */
+    @media (max-width:768px){
+      .rf-grid{ grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
+    }
+
     .rf-grid img{
       width:100%; height:auto; border-radius:6px;
       box-shadow:0 2px 6px rgba(0,0,0,.15);
@@ -86,7 +94,7 @@
     <section id="footer">
       <div class="inner">
         <h2 class="major">Get in touch</h2>
-        <!-- 这里可放联系表单或社交链接 -->
+        <!-- 联系方式或社交链接 -->
       </div>
     </section>
 
