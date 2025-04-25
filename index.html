@@ -8,24 +8,35 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
+    /* ---------- 全局 & 裁剪参数 ---------- */
     :root{
-      --crop:72px;   /* 左白边 */
-      --crop-b:0px;  /* 不裁底部 */
+      --crop:72px;   /* 左侧裁掉 72px */
+      --crop-b:0px;  /* 底部不裁 */
     }
     html,body{margin:0;padding:0;overflow-x:hidden;}
 
-    /* 顶栏 */
-    #header{background:#2E3445;display:flex;align-items:center;gap:0.75rem;padding:0.8rem 1rem}
+    /* ---------- 顶栏 ---------- */
+    #header{
+      background:#2E3445;
+      display:flex;align-items:center;gap:0.75rem;
+      padding:0.8rem 1rem;
+    }
     #header .header-logo{width:80px;height:auto}
-    #header h1{margin:0;font-size:0.9rem;line-height:1.3;font-weight:600;color:#fff;white-space:nowrap}
-    #header a{color:#fff;text-decoration:none}
+    #header h1{
+      margin:0;font-size:0.9rem;line-height:1.3;
+      font-weight:600;color:#fff;white-space:nowrap;
+    }
+    #header a{color:inherit;text-decoration:none}
 
-    /* 包裹 */
+    /* ---------- 页面包裹 ---------- */
     #page-wrapper{width:100%!important;max-width:100%!important;margin:0!important;padding:0!important}
 
-    /* Banner */
-    #banner{width:100%!important;position:relative;overflow:hidden;min-height:100vh;
-            display:flex;align-items:center;justify-content:center;text-align:center}
+    /* ---------- Banner 视频 ---------- */
+    #banner{
+      width:100%!important;
+      position:relative;overflow:hidden;min-height:100vh;
+      display:flex;align-items:center;justify-content:center;text-align:center;
+    }
     #banner video{
       position:absolute;
       top:calc(-1*var(--crop-b));
@@ -39,45 +50,80 @@
     #banner h2{line-height:1.2}
     #banner p.tagline{margin-top:1rem;font-size:1.4rem;font-weight:600}
 
-    /* RF */
-    #rfstats{padding:4rem 2rem;background:#2B246A;text-align:center}
+    /* ---------- 随机森林区块 ---------- */
+    #rfstats{
+      padding:4rem 2rem;
+      background:#2B246A;
+      text-align:center;
+    }
     #rfstats h2{font-size:2rem;margin-bottom:2rem}
-    .rf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto}
-    @media(max-width:768px){.rf-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}}
+    .rf-grid{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:1.5rem;
+      max-width:1200px;
+      margin:0 auto;
+    }
+    @media (max-width:768px){
+      .rf-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+    }
     .rf-grid img{width:100%;height:auto;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
 
-    /* Footer */
+    /* ---------- Footer ---------- */
     #footer{background:#323846;color:#fff;padding:4rem 2rem}
     .footer-wrapper{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:3rem}
     .edu-section{flex:1 1 320px;padding-left:0}
     .edu-list{list-style:none;padding:0;margin:0}
-    .edu-list li{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.8rem}
+    .edu-list li{
+      display:flex;align-items:center;gap:0.5rem;margin-bottom:0.8rem
+    }
     .edu-list img{width:80px;height:auto}
     .edu-list li:first-child span{white-space:nowrap}
+
     .contact-section{flex:1 1 320px}
     .contact-list{list-style:none;padding:0;margin:0}
     .contact-list li{margin-bottom:0.6rem;white-space:nowrap;overflow-wrap:normal}
+
     a.contact-link{color:#9ad7ff;text-decoration:none}
     a.contact-link:hover{text-decoration:underline}
 
-    /* ---------- 手机 ≤600px ---------- */
+    /* ---------- 手机端 ≤600px ---------- */
     @media (max-width:600px){
-      #header h1{font-size:0.7rem;line-height:1.2;white-space:normal}
+
+      /* 顶栏标题允许换行、字号小一点 */
+      #header h1{
+        font-size:0.7rem;
+        line-height:1.2;
+        white-space:normal;
+      }
+
+      /* Academic Cambridge 行允许换行 */
       .edu-list li span{white-space:normal}
-      .contact-section .contact-list li{white-space:normal;word-break:break-all}
+
+      /* 联系方式允许换行并断词 */
+      .contact-section .contact-list li{
+        white-space:normal;
+        word-break:break-all;
+      }
     }
 
     /* ---------- 超窄屏 ≤480px ---------- */
     @media (max-width:480px){
-      #header{flex-wrap:wrap}
+
+      #header{flex-wrap:wrap}                     /* logo 与标题可分行 */
+
+      /* 1️⃣ 顶栏标题：黑色、再小字号 */
       #header h1{
+        color:#000;
         font-size:0.55rem;
         line-height:1.15;
         white-space:normal;
         flex:1 1 100%;
       }
-      .edu-list li span{
-        font-size:0.8rem;
+
+      /* 2️⃣ 剑桥学位行：再缩小字号 */
+      .edu-list li:first-child span{
+        font-size:0.7rem;
         line-height:1.25;
         white-space:normal;
         word-break:break-word;
@@ -88,14 +134,16 @@
 <body class="is-preload">
 <div id="page-wrapper">
 
+  <!-- 顶栏 -->
   <header id="header">
     <img src="images/company.png" class="header-logo" alt="Company logo">
     <h1><a href="index.html">
       Peifeng Yu’s Research Project for Schneider Electric Global Student Experience<br>
-      (Continued with UBC Sauder BCom Capstone Class Supply Chain Analytics and Machine Learning)
+      (Continued with UBC Sauder BCom Capstone Class 414 Business Analytics and Machine Learning)
     </a></h1>
   </header>
 
+  <!-- Banner -->
   <section id="banner">
     <video autoplay muted loop playsinline>
       <source src="assets/vedio/bg.webm" type="video/webm">
@@ -108,6 +156,7 @@
     </div>
   </section>
 
+  <!-- 随机森林区块 -->
   <section id="rfstats">
     <h2>Random Forest Model Key Statistics &amp; Visualized Summaries</h2>
     <div class="rf-grid">
@@ -116,17 +165,27 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <section id="footer">
     <div class="inner footer-wrapper">
-      <div class="edu-section"><h3>Academic Background</h3><ul class="edu-list">
-        <li><img src="images/cambridge.png" alt="Cambridge"><span>University of Cambridge – MPhil, Technology Policy</span></li>
-        <li><img src="images/ubc.png" alt="UBC"><span>University of British Columbia – BCom, Operations &amp; Logistics Management</span></li>
-      </ul></div>
-      <div class="contact-section"><h3>Contact Details</h3><ul class="contact-list">
-        <li>Email: pyu03@student.ubc.ca / ericyupeifeng@outlook.com</li>
-        <li>LinkedIn: <a class="contact-link" href="https://www.linkedin.com/in/peifeng-yu-sauder" target="_blank">linkedin.com/in/peifeng-yu-sauder</a></li>
-        <li>Phone: +86&nbsp;188&nbsp;1256&nbsp;6996</li>
-      </ul></div>
+
+      <div class="edu-section">
+        <h3>Academic Background</h3>
+        <ul class="edu-list">
+          <li><img src="images/cambridge.png" alt="Cambridge"><span>University of Cambridge – MPhil, Technology Policy</span></li>
+          <li><img src="images/ubc.png" alt="UBC"><span>University of British Columbia – BCom, Operations &amp; Logistics Management</span></li>
+        </ul>
+      </div>
+
+      <div class="contact-section">
+        <h3>Contact Details</h3>
+        <ul class="contact-list">
+          <li>Email: pyu03@student.ubc.ca / ericyupeifeng@outlook.com</li>
+          <li>LinkedIn: <a class="contact-link" href="https://www.linkedin.com/in/peifeng-yu-sauder" target="_blank">linkedin.com/in/peifeng-yu-sauder</a></li>
+          <li>Phone: +86&nbsp;188&nbsp;1256&nbsp;6996</li>
+        </ul>
+      </div>
+
     </div>
   </section>
 
