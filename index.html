@@ -8,30 +8,31 @@
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
+    /* ---------- 全局 ---------- */
     :root{
-      --crop:72px;      /* 左白边 */
-      --crop-b:0px;    /* 底部要裁掉的像素，可再调 */
+      --crop:72px;   /* 左白边 */
+      --crop-b:0px;  /* 底部不裁 */
     }
     html,body{margin:0;padding:0;overflow-x:hidden;}
 
-    /* 顶栏 */
+    /* ---------- 顶栏 ---------- */
     #header{background:#2E3445;display:flex;align-items:center;gap:0.75rem;padding:0.8rem 1rem}
     #header .header-logo{width:80px;height:auto}
-    #header h1{margin:0;font-size:0.9rem;line-height:1.3;font-weight:600;color:#fff}
+    #header h1{margin:0;font-size:0.9rem;line-height:1.3;font-weight:600;color:#fff;white-space:nowrap}
     #header a{color:#fff;text-decoration:none}
 
-    /* 布局包裹 */
+    /* ---------- 页面包裹 ---------- */
     #page-wrapper{width:100%!important;max-width:100%!important;margin:0!important;padding:0!important}
 
-    /* 视频 Banner */
+    /* ---------- Banner ---------- */
     #banner{width:100%!important;position:relative;overflow:hidden;min-height:100vh;
             display:flex;align-items:center;justify-content:center;text-align:center}
     #banner video{
       position:absolute;
-      top:calc(-1*var(--crop-b));                /* ↑ 向上挪 */
-      left:calc(-1*var(--crop));                 /* ← 左移 */
-      width:calc(100% + var(--crop));            /* → 拉宽 */
-      height:calc(100% + var(--crop-b));         /* ↓ 拉高 */
+      top:calc(-1*var(--crop-b));
+      left:calc(-1*var(--crop));
+      width:calc(100% + var(--crop));
+      height:calc(100% + var(--crop-b));
       object-fit:cover;
     }
     #banner .inner{position:relative;z-index:1}
@@ -39,14 +40,14 @@
     #banner h2{line-height:1.2}
     #banner p.tagline{margin-top:1rem;font-size:1.4rem;font-weight:600}
 
-    /* 随机森林区块 */
+    /* ---------- RF 区块 ---------- */
     #rfstats{padding:4rem 2rem;background:#2B246A;text-align:center}
     #rfstats h2{font-size:2rem;margin-bottom:2rem}
     .rf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;max-width:1200px;margin:0 auto}
     @media(max-width:768px){.rf-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}}
     .rf-grid img{width:100%;height:auto;border-radius:6px;box-shadow:0 2px 6px rgba(0,0,0,.15)}
 
-    /* Footer */
+    /* ---------- Footer ---------- */
     #footer{background:#323846;color:#fff;padding:4rem 2rem}
     .footer-wrapper{max-width:1000px;margin:0 auto;display:flex;flex-wrap:wrap;gap:3rem}
     .edu-section{flex:1 1 320px;padding-left:0}
@@ -54,11 +55,32 @@
     .edu-list li{display:flex;align-items:center;gap:0.5rem;margin-bottom:0.8rem}
     .edu-list img{width:80px;height:auto}
     .edu-list li:first-child span{white-space:nowrap}
+
     .contact-section{flex:1 1 320px}
     .contact-list{list-style:none;padding:0;margin:0}
     .contact-list li{margin-bottom:0.6rem;white-space:nowrap;overflow-wrap:normal}
+
     a.contact-link{color:#9ad7ff;text-decoration:none}
     a.contact-link:hover{text-decoration:underline}
+
+    /* ---------- 移动端优化 ---------- */
+    @media (max-width:600px){
+
+      #header h1{
+        font-size:0.7rem;
+        line-height:1.2;
+        white-space:normal;     /* 允许换行 */
+      }
+
+      .edu-list li span{
+        white-space:normal;     /* 剑桥行可换行 */
+      }
+
+      .contact-section .contact-list li{
+        white-space:normal;     /* Email/LinkedIn 可换行 */
+        word-break:break-all;   /* 长邮箱断词 */
+      }
+    }
   </style>
 </head>
 <body class="is-preload">
