@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-  Micro-Hub · Manhattan Reverse Logistics  —  Video Banner + RF Stats
+  Micro-Hub · Manhattan Reverse Logistics —— Video Banner + RF Stats + Contact
 -->
 <html>
 <head>
@@ -32,25 +32,54 @@
     /* ---------- 随机森林可视化区块 ---------- */
     #rfstats{
       padding:4rem 2rem;
-      background:#F0EDFF;     /* ❶ 浅紫色背景 */
+      background:#D8CCFF;           /* 深一点的紫色 ❶ */
       text-align:center;
     }
     #rfstats h2{ font-size:2rem; margin-bottom:2rem; }
 
     .rf-grid{
       display:grid;
-      grid-template-columns:repeat(3, 1fr); /* ❷ 每行固定 3 张 */
+      grid-template-columns:repeat(3, 1fr); /* 固定 3×2 布局 */
       gap:1.5rem; max-width:1200px; margin:0 auto;
     }
-    /* 窄屏自适应列数 */
     @media (max-width:768px){
       .rf-grid{ grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
     }
-
     .rf-grid img{
       width:100%; height:auto; border-radius:6px;
       box-shadow:0 2px 6px rgba(0,0,0,.15);
     }
+
+    /* ---------- Footer：学术背景 + 联系方式 ---------- */
+    #footer{
+      background:#323846; color:#fff;     /* 深灰底反差 */
+      padding:4rem 2rem;
+    }
+    #footer h2{ margin-bottom:2rem; }
+
+    .footer-wrapper{
+      max-width:1000px; margin:0 auto;
+      display:flex; flex-wrap:wrap; gap:3rem;
+    }
+
+    /* 学术背景列表 */
+    .edu-section{ flex:1 1 320px; }
+    .edu-section h3{ margin-bottom:1rem; }
+    .edu-list{ list-style:none; padding:0; margin:0; }
+    .edu-list li{
+      display:flex; align-items:center; gap:0.75rem;
+      margin-bottom:0.8rem;
+    }
+    .edu-list img{ width:40px; height:auto; }
+
+    /* 联系方式 */
+    .contact-section{ flex:1 1 320px; }
+    .contact-section h3{ margin-bottom:1rem; }
+    .contact-list{ list-style:none; padding:0; margin:0; }
+    .contact-list li{ margin-bottom:0.6rem; }
+
+    a.contact-link{ color:#9ad7ff; text-decoration:none; }
+    a.contact-link:hover{ text-decoration:underline; }
   </style>
 </head>
 
@@ -73,7 +102,7 @@
       <div class="inner">
         <div class="logo"><span class="icon fa-gem"></span></div>
         <h2 class="title-bg">Micro-Hub Placement for Manhattan Reverse Logistics</h2>
-        <p  class="tagline title-bg">GIS simulation × Random Forest analytics</p>
+        <p class="tagline title-bg">GIS simulation × Random Forest analytics</p>
       </div>
     </section>
 
@@ -90,11 +119,35 @@
       </div>
     </section>
 
-    <!-- 页脚 -->
+    <!-- Footer：学术背景 + 联系方式 -->
     <section id="footer">
-      <div class="inner">
-        <h2 class="major">Get in touch</h2>
-        <!-- 联系方式或社交链接 -->
+      <div class="inner footer-wrapper">
+
+        <!-- 学术背景 -->
+        <div class="edu-section">
+          <h3>Academic Background</h3>
+          <ul class="edu-list">
+            <li>
+              <img src="images/cambridge.png" alt="Cambridge logo">
+              University of Cambridge – MPhil, Technology Policy
+            </li>
+            <li>
+              <img src="images/ubc.png" alt="UBC logo">
+              University of British Columbia – BCom, Operations &amp; Logistics Management
+            </li>
+          </ul>
+        </div>
+
+        <!-- 联系方式 -->
+        <div class="contact-section">
+          <h3>Contact Details</h3>
+          <ul class="contact-list">
+            <li>Email: pyu03@student.ubc.ca / ericyupeifeng@outlook.com</li>
+            <li>LinkedIn: <a class="contact-link" href="https://www.linkedin.com/in/peifeng-yu-sauder" target="_blank">linkedin.com/in/peifeng-yu-sauder</a></li>
+            <li>Phone: +86&nbsp;188&nbsp;1256&nbsp;6996</li>
+          </ul>
+        </div>
+
       </div>
     </section>
 
