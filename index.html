@@ -1,80 +1,67 @@
 <!DOCTYPE HTML>
 <!--
-  Micro-Hub · Manhattan Reverse Logistics —— Video Banner + RF Stats + Contact
+  Micro-Hub · Manhattan Reverse Logistics — Video Banner + RF Stats + Contact
 -->
 <html>
 <head>
-  <title>Micro-Hub Placement for Manhattan Reverse Logistics via AnyLogic GIS & Random Forests</title>
+  <title>Peifeng Yu’s Research Project for Schneider Electric Global Student Experience (Continued with UBC Sauder BCom Capstone Class 414 Business Analytics and Machine Learning)</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
   <style>
+    /* ---------- 顶栏 ---------- */
+    #header{
+      background:#2E3445;
+      display:flex; align-items:center; gap:0.75rem;
+      padding:0.8rem 1rem;
+    }
+    #header .header-logo{
+      width:40px; height:auto;
+    }
+    #header h1{
+      margin:0; font-size:0.9rem; line-height:1.3;
+      text-transform:none; font-weight:600;
+      color:#fff;
+    }
+    #header a{ color:#fff; text-decoration:none; }
+
     /* ---------- 视频 Banner ---------- */
-    #banner{
-      position:relative; overflow:hidden; min-height:100vh;
-      display:flex; align-items:center; justify-content:center; text-align:center;
-      padding:0;
-    }
-    #banner video{
-      position:absolute; top:0; left:0;
-      min-width:100%; min-height:100%; object-fit:cover;
-    }
+    #banner{ position:relative; overflow:hidden; min-height:100vh;
+      display:flex; align-items:center; justify-content:center; text-align:center; padding:0; }
+    #banner video{ position:absolute; top:0; left:0;
+      min-width:100%; min-height:100%; object-fit:cover; }
     #banner .inner{ position:relative; z-index:1; }
-    .title-bg{
-      display:inline-block; background:rgba(55,70,100,.7);
-      padding:.3em .6em; border-radius:4px;
-    }
+    .title-bg{ display:inline-block; background:rgba(55,70,100,.7);
+      padding:.3em .6em; border-radius:4px; }
     #banner h2{ line-height:1.2; }
     #banner p.tagline{ margin-top:1rem; font-size:1.4rem; font-weight:600; }
 
     /* ---------- 随机森林可视化区块 ---------- */
-    #rfstats{
-      padding:4rem 2rem;
-      background:#D8CCFF;           /* 深一点的紫色 ❶ */
-      text-align:center;
-    }
+    #rfstats{ padding:4rem 2rem;
+      background:#B19CFF;           /* 更深的紫色 */
+      text-align:center; }
     #rfstats h2{ font-size:2rem; margin-bottom:2rem; }
-
-    .rf-grid{
-      display:grid;
-      grid-template-columns:repeat(3, 1fr); /* 固定 3×2 布局 */
-      gap:1.5rem; max-width:1200px; margin:0 auto;
-    }
-    @media (max-width:768px){
+    .rf-grid{ display:grid; grid-template-columns:repeat(3,1fr);
+      gap:1.5rem; max-width:1200px; margin:0 auto; }
+    @media(max-width:768px){
       .rf-grid{ grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); }
     }
-    .rf-grid img{
-      width:100%; height:auto; border-radius:6px;
-      box-shadow:0 2px 6px rgba(0,0,0,.15);
-    }
+    .rf-grid img{ width:100%; height:auto; border-radius:6px;
+      box-shadow:0 2px 6px rgba(0,0,0,.15); }
 
     /* ---------- Footer：学术背景 + 联系方式 ---------- */
-    #footer{
-      background:#323846; color:#fff;     /* 深灰底反差 */
-      padding:4rem 2rem;
-    }
-    #footer h2{ margin-bottom:2rem; }
+    #footer{ background:#323846; color:#fff; padding:4rem 2rem; }
+    .footer-wrapper{ max-width:1000px; margin:0 auto;
+      display:flex; flex-wrap:wrap; gap:3rem; }
 
-    .footer-wrapper{
-      max-width:1000px; margin:0 auto;
-      display:flex; flex-wrap:wrap; gap:3rem;
-    }
-
-    /* 学术背景列表 */
     .edu-section{ flex:1 1 320px; }
-    .edu-section h3{ margin-bottom:1rem; }
     .edu-list{ list-style:none; padding:0; margin:0; }
-    .edu-list li{
-      display:flex; align-items:center; gap:0.75rem;
-      margin-bottom:0.8rem;
-    }
-    .edu-list img{ width:40px; height:auto; }
+    .edu-list li{ display:flex; align-items:center; gap:0.75rem; margin-bottom:0.8rem; }
+    .edu-list img{ width:80px; height:auto; }   /* 放大 2 倍 */
 
-    /* 联系方式 */
     .contact-section{ flex:1 1 320px; }
-    .contact-section h3{ margin-bottom:1rem; }
     .contact-list{ list-style:none; padding:0; margin:0; }
     .contact-list li{ margin-bottom:0.6rem; }
 
@@ -86,11 +73,16 @@
 <body class="is-preload">
   <div id="page-wrapper">
 
-    <!-- 顶部标题 -->
+    <!-- 顶栏：两枚 logo + 长标题 -->
     <header id="header">
-      <h1><a href="index.html">
-        Micro-Hub Placement for Manhattan Reverse Logistics via AnyLogic GIS &amp; Random Forests
-      </a></h1>
+      <img src="images/company.png" class="header-logo" alt="Company logo">
+      <img src="images/ubc_small.png" class="header-logo" alt="UBC logo">
+      <h1>
+        <a href="index.html">
+          Peifeng Yu’s Research Project for Schneider Electric Global Student Experience<br>
+          (Continued with UBC Sauder BCom Capstone Class&nbsp;414&nbsp;Business&nbsp;Analytics&nbsp;and&nbsp;Machine&nbsp;Learning)
+        </a>
+      </h1>
     </header>
 
     <!-- 视频 Banner -->
@@ -102,7 +94,7 @@
       <div class="inner">
         <div class="logo"><span class="icon fa-gem"></span></div>
         <h2 class="title-bg">Micro-Hub Placement for Manhattan Reverse Logistics</h2>
-        <p class="tagline title-bg">GIS simulation × Random Forest analytics</p>
+        <p  class="tagline title-bg">GIS simulation × Random Forest analytics</p>
       </div>
     </section>
 
@@ -119,26 +111,20 @@
       </div>
     </section>
 
-    <!-- Footer：学术背景 + 联系方式 -->
+    <!-- Footer -->
     <section id="footer">
       <div class="inner footer-wrapper">
 
-        <!-- 学术背景 -->
         <div class="edu-section">
           <h3>Academic Background</h3>
           <ul class="edu-list">
-            <li>
-              <img src="images/cambridge.png" alt="Cambridge logo">
-              University of Cambridge – MPhil, Technology Policy
-            </li>
-            <li>
-              <img src="images/ubc.png" alt="UBC logo">
-              University of British Columbia – BCom, Operations &amp; Logistics Management
-            </li>
+            <li><img src="images/cambridge.png" alt="Cambridge logo">
+                University of Cambridge – MPhil, Technology Policy</li>
+            <li><img src="images/ubc.png" alt="UBC logo">
+                University of British Columbia – BCom, Operations &amp; Logistics Management</li>
           </ul>
         </div>
 
-        <!-- 联系方式 -->
         <div class="contact-section">
           <h3>Contact Details</h3>
           <ul class="contact-list">
