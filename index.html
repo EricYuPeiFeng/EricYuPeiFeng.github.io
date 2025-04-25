@@ -1,6 +1,6 @@
 <!DOCTYPE HTML>
 <!--
-  Solid State (HTML5 UP) · 简化版，视频 Banner + 自定义区块
+  Micro-Hub · Manhattan Reverse Logistics  —  Video Banner + RF Stats
 -->
 <html>
 <head>
@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="assets/css/main.css" />
   <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 
-  <!-- 自定义样式 -->
   <style>
     /* ---------- 视频 Banner ---------- */
     #banner{
@@ -23,29 +22,22 @@
       min-width:100%; min-height:100%; object-fit:cover;
     }
     #banner .inner{ position:relative; z-index:1; }
-
     .title-bg{
-      display:inline-block;
-      background:rgba(55,70,100,.7);
+      display:inline-block; background:rgba(55,70,100,.7);
       padding:.3em .6em; border-radius:4px;
     }
     #banner h2{ line-height:1.2; }
     #banner p.tagline{ margin-top:1rem; font-size:1.4rem; font-weight:600; }
 
-    /* ---------- 新增：随机森林图片栅格 ---------- */
+    /* ---------- 随机森林可视化区块 ---------- */
     #rfstats{
-      padding:4rem 2rem;
-      background:#f5f6f7;            /* 淡灰底，区分主体 */
-      text-align:center;
+      padding:4rem 2rem; background:#f5f6f7; text-align:center;
     }
-    #rfstats h2{
-      font-size:2rem; margin-bottom:2rem;
-    }
+    #rfstats h2{ font-size:2rem; margin-bottom:2rem; }
     .rf-grid{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:1.5rem;
-      max-width:1200px; margin:0 auto;
+      gap:1.5rem; max-width:1200px; margin:0 auto;
     }
     .rf-grid img{
       width:100%; height:auto; border-radius:6px;
@@ -57,13 +49,11 @@
 <body class="is-preload">
   <div id="page-wrapper">
 
-    <!-- 头部 Logo -->
+    <!-- 顶部标题 -->
     <header id="header">
-      <h1>
-        <a href="index.html">
-          Micro-Hub Placement for Manhattan Reverse Logistics via AnyLogic GIS &amp; Random Forests
-        </a>
-      </h1>
+      <h1><a href="index.html">
+        Micro-Hub Placement for Manhattan Reverse Logistics via AnyLogic GIS &amp; Random Forests
+      </a></h1>
     </header>
 
     <!-- 视频 Banner -->
@@ -72,20 +62,17 @@
         <source src="assets/vedio/bg.webm" type="video/webm">
         <source src="assets/vedio/bg.mp4"  type="video/mp4">
       </video>
-
       <div class="inner">
         <div class="logo"><span class="icon fa-gem"></span></div>
         <h2 class="title-bg">Micro-Hub Placement for Manhattan Reverse Logistics</h2>
-        <p class="tagline title-bg">GIS simulation × Random Forest analytics</p>
+        <p  class="tagline title-bg">GIS simulation × Random Forest analytics</p>
       </div>
     </section>
 
-    <!-- ★★★ 新增：随机森林模型可视化区块 ★★★ -->
+    <!-- 随机森林统计与可视化 -->
     <section id="rfstats">
       <h2>Random Forest Model Key Statistics &amp; Visualized Summaries</h2>
-
       <div class="rf-grid">
-        <!-- 占位图，上传后自动替换 -->
         <img src="images/rf1.png" alt="RF visualization 1">
         <img src="images/rf2.png" alt="RF visualization 2">
         <img src="images/rf3.png" alt="RF visualization 3">
@@ -95,46 +82,11 @@
       </div>
     </section>
 
-    <!-- Wrapper（保留其他内容，如需可继续编辑） -->
-    <section id="wrapper">
-      <!-- Two（示例保留） -->
-      <section id="two" class="wrapper alt spotlight style2">
-        <div class="inner">
-          <a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
-          <div class="content">
-            <h2 class="major">Tempus adipiscing</h2>
-            <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit…</p>
-            <a href="#" class="special">Learn more</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Three -->
-      <section id="three" class="wrapper spotlight style3">
-        <div class="inner">
-          <a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
-          <div class="content">
-            <h2 class="major">Nullam dignissim</h2>
-            <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit…</p>
-            <a href="#" class="special">Learn more</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- Four -->
-      <section id="four" class="wrapper alt style1">
-        <div class="inner">
-          <h2 class="major">Vitae phasellus</h2>
-          <p>Cras mattis ante fermentum, malesuada neque vitae…</p>
-        </div>
-      </section>
-    </section>
-
-    <!-- Footer -->
+    <!-- 页脚 -->
     <section id="footer">
       <div class="inner">
         <h2 class="major">Get in touch</h2>
-        <!-- … Contact form / links … -->
+        <!-- 这里可放联系表单或社交链接 -->
       </div>
     </section>
 
